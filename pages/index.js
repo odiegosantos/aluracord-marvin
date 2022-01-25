@@ -3,64 +3,23 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
-// function GlobalStyle() {
-//   return (
-//     <style global jsx>{`
-//       * {
-//         margin: 0;
-//         padding: 0;
-//         box-sizing: border-box;
-//       }
-//       body {
-//         font-family: 'Open sans', sans-serif;
-//       }
-//       /* App fit Height */
-//         html, body, #_next {
-//         min-height: 100vh;
-//         display: flex;
-//         flex: 1;
-//       }
-//       #_next {
-//         flex: 1;
-//       }
-//       #_next > * {
-//         flex:
-//       }
-//     `}</style>
-//   )
-// }
-
-function Titulo(props) {
+function Title(props) {
   const Tag = props.tag || 'h1';
   return (
     <>
       <Tag>{props.children}</Tag>
       <style jsx>{`
-            ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['000']};
-                font-size: 24px;
-                font-weight: 600;
-            }
-            `}</style>
+        ${Tag} {
+          color: ${appConfig.theme.colors.neutrals['000']};
+          font-size: 24px;
+          font-weight: 600;
+        }
+      `}</style>
     </>
   );
 }
 
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-// }
-// export default HomePage
-
 export default function PaginaInicial() {
-  // const username = 'odiegosantos';
   const [username, setUsername] = React.useState('odiegosantos');
   const roteamento = useRouter();
 
@@ -72,7 +31,7 @@ export default function PaginaInicial() {
           display: 'flex',
           alignItems: 'end',
           justifyContent: 'right',
-          backgroundColor: appConfig.theme.colors.primary['000'],
+          backgroundColor: appConfig.theme.colors.MyColors['BgColor'],
           backgroundImage: 'url(https://wallpaper.dog/large/11009165.jpg)',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -93,8 +52,8 @@ export default function PaginaInicial() {
             borderRadius: '5px',
             padding: '32px',
             margin: '16px',
-            boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals['010'],
+            boxShadow: '0 2px 5px 0 #FFF',
+            backgroundColor: appConfig.theme.colors.MyColors['BgCardColor'],
           }}
         >
           {/* Formulário */}
@@ -116,7 +75,7 @@ export default function PaginaInicial() {
               marginBottom: '32px',
             }}
           >
-            <Titulo tag="h2">Boas vindas de volta!</Titulo>
+            <Title tag="h2">Boas vindas de volta!</Title>
             <Text variant="body3" styleSheet={{
               marginBottom: '32px',
               color: appConfig.theme.colors.neutrals['200']
@@ -147,9 +106,9 @@ export default function PaginaInicial() {
               fullWidth
               buttonColors={{
                 contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                mainColor: appConfig.theme.colors.MyColors['BgButtonColor'],
+                mainColorLight: appConfig.theme.colors.neutrals['000'],
+                mainColorStrong: appConfig.theme.colors.MyColors['BgButtonColorHover'],
               }}
             />
           </Box>
@@ -163,9 +122,9 @@ export default function PaginaInicial() {
               alignItems: 'center',
               maxWidth: '200px',
               padding: '16px',
-              backgroundColor: appConfig.theme.colors.neutrals[800],
+              backgroundColor: appConfig.theme.colors.MyColors['BgImageColor'],
               border: '1px solid',
-              borderColor: appConfig.theme.colors.neutrals[999],
+              borderColor: appConfig.theme.colors.neutrals['000'],
               borderRadius: '10px',
               flex: 1,
               minHeight: '240px',
