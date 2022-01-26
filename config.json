@@ -29,8 +29,8 @@
         "999": "#080A0C"
       },
       "MyColors": {
-        "BgColor": "#E673E4",
-        "BgCardColor": "#ffffff1A",
+        "BgColor": "#FFF",
+        "BgCardColor": "#ffffff1",
         "BgImageColor": "#FFFFFF4A",
         "BgButtonColor": "#5507E6",
         "BgButtonColorHover": "#7C73E6"

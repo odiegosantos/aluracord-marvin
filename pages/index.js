@@ -85,7 +85,7 @@ export default function PaginaInicial() {
 
             <TextField
               value={username}
-              onChange={function (event) {
+              onChange={(event) => {
                 console.log('usuario digitou', event.target.value);
                 const valor = event.target.value;
                 setUsername(valor);
